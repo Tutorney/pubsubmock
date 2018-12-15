@@ -1,5 +1,5 @@
 {
-  "name": "@juddnw/PubSubMock",
+  "name": "@juddnw/pubsubmock",
   "version": "1.0.0",
   "description": "Mock for @google-cloud/pubsub v1",
   "main": "index.js",
