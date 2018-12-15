@@ -1,0 +1,23 @@
+{
+  "name": "@juddnw/PubSubMock",
+  "version": "1.0.0",
+  "description": "Mock for @google-cloud/pubsub v1",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juddnw/PubSubMock.git"
+  },
+  "keywords": ["mock", "@google-cloud/pubsub"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juddnw/PubSubMock/issues"
+  },
+  "homepage": "https://github.com/juddnw/PubSubMock#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
