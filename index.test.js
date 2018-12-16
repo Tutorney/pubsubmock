@@ -1,4 +1,4 @@
-const {PublisherClient, SubscriberClient} = require('./PubSubMock').v1;
+const {PublisherClient, SubscriberClient} = require('.').v1;
 const publisherClient = new PublisherClient();
 const subscriberClient = new SubscriberClient();
 
