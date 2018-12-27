@@ -1,3 +1,5 @@
+const {PUBSUBMOCK_SUBSCRIPTION, PUBSUBMOCK_TOPIC} = process.env;
+
 class PubSubMock {
   constructor() {
     if (!PubSubMock.singleton) {
@@ -8,16 +10,23 @@ class PubSubMock {
   }
 
   // PublisherClient
-  async publish({messages}) {
-    this.messages = messages;
+  async publish({messages, topic}) {
+    if (topic === PUBSUBMOCK_TOPIC) {
+      this.messages = messages;
+    }
   }
 
   // SubscriberClient
-  async pull() {
-    const receivedMessages = this.messages.map(message => ({message}));
+  async pull({subscription}) {
+    let receivedMessages;
+    if (subscription === PUBSUBMOCK_SUBSCRIPTION) {
+      receivedMessages = this.messages.map(message => ({message}));
 
-    // Disallow fetching the same messages during race condition
-    this.acknowledge();
+      // Disallow fetching the same messages during race condition
+      this.acknowledge();
+    } else {
+      receivedMessages = [];
+    }
 
     return [{receivedMessages}];
   }
